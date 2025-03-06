@@ -9,13 +9,14 @@
 
 html {
   /* background-color: #5e5768; */
-  background-image: url(../imgs/bg.jpg);
+  background-image: url(../imgs/bg2.jpg);
   background-size: cover;
 }
 
 body {
   overflow: hidden;
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(5px);
+  
 }
 
 .webgl {
@@ -54,9 +55,9 @@ main p {
 main button {
   padding: 1.5rem 3rem;
   background: transparent;
-  border: 1px solid #aaa;
-  color: #f0f5f2;
+  border: 1px solid #b02929;
   font-size: 1.4rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.5s;
 }
@@ -69,4 +70,5 @@ main button:hover {
 
 a {
   text-decoration: none;
+  color: #17fa72;
 }
