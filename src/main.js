@@ -32,7 +32,7 @@ function init() {
   });
 
   const loader = new GLTFLoader();
-  loader.load("../imgs/chandra_v09.glb", (gltf) => {
+  loader.load("../imgs/chandra_v09.gltf", (gltf) => {
     const model = gltf.scene;
     model.position.set(1, 0, 0);
     model.rotation.set(0.3, -1.75, 0.25);
