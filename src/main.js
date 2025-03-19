@@ -4,6 +4,19 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as dat from "lil-gui";
 
+window.addEventListener('load', function() {
+  if (!localStorage.getItem('isLoaded')) {
+    setTimeout(function() {
+      const loader = document.getElementById('loader');
+      loader.style.display = 'none';  
+    }, 3000);  
+    localStorage.setItem('isLoaded', 'true');
+  } else {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+  }
+});
+
 let scene, camera, renderer, gui, material;
 let mesh1, mesh2, mesh3, mesh4;
 let directionalLight;
@@ -34,7 +47,7 @@ function init() {
   const loader = new GLTFLoader();
   loader.load("../imgs/chandra_v09.gltf", (gltf) => {
     const model = gltf.scene;
-    model.position.set(1, 0, 0);
+    model.position.set(1, 0, -2);
     model.rotation.set(0.3, -1.75, 0.25);
     model.scale.set(0.3, 0.3, 0.3);
     scene.add(model);
@@ -105,3 +118,5 @@ window.addEventListener("resize", () => {
 window.addEventListener("wheel", (e) => {
   speed += e.deltaY * 0.0002;
 });
+
+
