@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as dat from "lil-gui";
 
 window.addEventListener('load', function() {
