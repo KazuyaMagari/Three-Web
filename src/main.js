@@ -30,7 +30,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.z = 5;
   scene.add(camera);
-
+  // extract canvas tag in HTML
   const canvas = document.querySelector(".webgl");
   renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -42,7 +42,7 @@ function init() {
     roughness: 0.4,
     flatShading: true
   });
-
+ // load model from other file using GLTFLoader
   const loader = new GLTFLoader();
   loader.load("../imgs/chandra_v09.gltf", (gltf) => {
     const model = gltf.scene;
@@ -51,7 +51,7 @@ function init() {
     model.scale.set(0.3, 0.3, 0.3);
     scene.add(model);
   });
-
+  // gui setter 
   gui = new dat.GUI();
   gui.addColor(material, "color");
   gui.add(material, "metalness", 0, 1, 0.01);
@@ -79,7 +79,7 @@ function init() {
 function animate() {
   let deltaTime = clock.getDelta();
   renderer.render(scene, camera);
-
+  // rotation rate 
   mesh1.rotation.x += 0.1 * deltaTime;
   mesh1.rotation.y += 0.1 * deltaTime;
   mesh2.rotation.x += 0.1 * deltaTime;
