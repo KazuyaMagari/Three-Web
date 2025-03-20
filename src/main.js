@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
     setTimeout(function() {
       const loader = document.getElementById('loader');
       loader.style.display = 'none';  
-    }, 3000);  
+    }, 4000);  
     localStorage.setItem('isLoaded', 'true');
   } else {
     const loader = document.getElementById('loader');
